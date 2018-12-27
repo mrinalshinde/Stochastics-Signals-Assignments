@@ -1,0 +1,14 @@
+\contentsline {chapter}{\numberline {1}Random variables and random Numbers}{2}
+\contentsline {section}{\numberline {1.1}Uniform distribution}{3}
+\contentsline {section}{\numberline {1.2}Normal distribution}{5}
+\contentsline {section}{\numberline {1.3}Approximation of distribution function}{7}
+\contentsline {section}{\numberline {1.4}Bivariate normal distribution}{8}
+\contentsline {section}{\numberline {1.5}Monte-Carlo-method}{10}
+\contentsline {chapter}{\numberline {2}Exercises with Matlab}{13}
+\contentsline {section}{\numberline {2.1} Mean value, variance and standard deviation }{13}
+\contentsline {section}{\numberline {2.2} Density function and histogram }{18}
+\contentsline {section}{\numberline {2.3} Distribution function and frequency }{21}
+\contentsline {section}{\numberline {2.4} Generation of a bivariate normal distribution }{23}
+\contentsline {section}{\numberline {2.5} Bivariate normal distribution }{24}
+\contentsline {section}{\numberline {2.6} Monte-Carlo-Method for approximation of $\pi $ }{27}
+\contentsline {chapter}{Bibliography}{30}
