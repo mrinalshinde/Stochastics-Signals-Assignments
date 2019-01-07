@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.15)  7 JAN 2019 02:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.11.15)  7 JAN 2019 20:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -747,12 +747,7 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 \c@blind@pangramcount=\count184
 \c@blind@pangrammax=\count185
 ))
-(./Main_file.aux (./chapter1.aux) (./chapter2.aux
-
-LaTeX Warning: Label `LS-adjustment to a circle: estimating the centre ' multip
-ly defined.
-
-) (./bibliography.aux))
+(./Main_file.aux (./chapter1.aux) (./chapter2.aux) (./bibliography.aux))
 \openout1 = `Main_file.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
@@ -1404,16 +1399,12 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 67.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 67.
 Package rerunfilecheck Info: File `Main_file.out' has not changed.
 (rerunfilecheck)             Checksum: DCDCBFFE7F6FAA2EB4DAF1660879BD91;1287.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 67.
  ) 
 Here is how much of TeX's memory you used:
  21103 strings out of 492649
  373652 string characters out of 6129621
- 693138 words of memory out of 5000000
+ 694186 words of memory out of 5000000
  24139 multiletter control sequences out of 15000+600000
  13129 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1435,7 +1426,7 @@ ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
 018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
 18/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Main_file.pdf (45 pages, 2782492 bytes).
+Output written on Main_file.pdf (45 pages, 2782529 bytes).
 PDF statistics:
  860 PDF objects out of 1000 (max. 8388607)
  748 compressed objects within 8 object streams
