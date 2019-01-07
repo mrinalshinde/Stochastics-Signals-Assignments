@@ -1,0 +1,21 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Transformation of uniformly distributed random variable\relax }}{5}{figure.caption.5}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces function $X + Y = Z$\relax }}{9}{figure.caption.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Distributions\relax }}{25}{figure.caption.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Uniform distribution}}}{25}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Standard normal distribution}}}{25}{subfigure.1.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exponential model}}}{27}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sine model}}}{27}{subfigure.2.2}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Four different models\relax }}{27}{figure.caption.9}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Polynomial model}}}{27}{subfigure.2.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Power model}}}{27}{subfigure.2.4}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Variance as a function of the polynomial order\relax }}{32}{figure.caption.11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exponential model}}}{35}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sine model}}}{35}{subfigure.4.2}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Comparison of observations and estimated models\relax }}{35}{figure.caption.14}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Polynomial model}}}{35}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Power model}}}{35}{subfigure.4.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces LS-adjustment to a circle: estimating the centre \relax }}{37}{figure.caption.15}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces LS-Fit to a circle: iteration \relax }}{39}{figure.caption.16}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces LS - adjustment to a circle: estimating the centre \relax }}{42}{figure.caption.18}

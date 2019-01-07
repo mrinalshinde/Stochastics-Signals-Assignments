@@ -1,0 +1,29 @@
+clear all
+close all
+clc
+
+load dat3_1;
+for p = 10:-1:1
+[~, sigma_ply(p)] = LSE(xy3(:,1),xy3(:,2),'polynomial',p);
+end
+plotGraph(sigma_ply)
+
+function plotGraph(sigma)
+p = 1:10;
+plot(p,sigma,'-ro',...
+    'LineWidth',3,...
+    'MarkerEdgeColor','k',...
+    'MarkerFaceColor','r',...
+    'MarkerSize',10)
+grid on
+set(gca,'FontSize',28)
+str = 'Variance as a function of polynomial order';
+set(gca,'Title',text('String',str,'FontAngle', 'italic', ...
+    'FontWeight', 'bold'), ...
+         'xlabel',text('String', 'polynomial order (p)',...
+         'FontAngle','italic'),...
+         'ylabel',text('String', 'variance','FontAngle','italic'), ...
+         'FontSize',28)
+
+end
+
