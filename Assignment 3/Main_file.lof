@@ -1,19 +1,19 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Distributions\relax }}{20}{figure.caption.5}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Uniform distribution}}}{20}{subfigure.1.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Standard normal distribution}}}{20}{subfigure.1.2}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exponential model}}}{22}{subfigure.2.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sine model}}}{22}{subfigure.2.2}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Four different models\relax }}{22}{figure.caption.7}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Polynomial model}}}{22}{subfigure.2.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Power model}}}{22}{subfigure.2.4}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Variance as a function of the polynomial order\relax }}{27}{figure.caption.9}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exponential model}}}{30}{subfigure.4.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sine model}}}{30}{subfigure.4.2}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Comparison of observations and estimated models\relax }}{30}{figure.caption.12}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Polynomial model}}}{30}{subfigure.4.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Power model}}}{30}{subfigure.4.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces LS-adjustment to a circle: estimating the centre \relax }}{32}{figure.caption.13}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces LS-Fit to a circle: iteration \relax }}{34}{figure.caption.14}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces LS - adjustment to a circle: estimating the centre \relax }}{37}{figure.caption.16}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Distributions\relax }}{24}{figure.caption.5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Uniform distribution}}}{24}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Standard normal distribution}}}{24}{subfigure.1.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exponential model}}}{26}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sine model}}}{26}{subfigure.2.2}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Four different models\relax }}{26}{figure.caption.7}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Polynomial model}}}{26}{subfigure.2.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Power model}}}{26}{subfigure.2.4}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Variance as a function of the polynomial order\relax }}{31}{figure.caption.9}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exponential model}}}{34}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sine model}}}{34}{subfigure.4.2}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Comparison of observations and estimated models\relax }}{34}{figure.caption.12}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Polynomial model}}}{34}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Power model}}}{34}{subfigure.4.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces LS-adjustment to a circle: estimating the centre \relax }}{36}{figure.caption.13}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces LS-Fit to a circle: iteration \relax }}{38}{figure.caption.14}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces LS - adjustment to a circle: estimating the centre \relax }}{41}{figure.caption.16}

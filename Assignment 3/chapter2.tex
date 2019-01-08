@@ -18,15 +18,14 @@
     emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
     %emph=[2]{word1,word2}, emphstyle=[2]{style},    
 }
-\noindent \textbf{Task:} Now data for four different signal models have to be created. Generate therefore an on [0, 1] uniformly distributed random sequence \texttt{x1} and a standard normal distributed random sequence \texttt{z1,} each with a length of 100 values. Set in both cases first the initial value to 0. Type now these commands in MATLAB in the following order: \\
-
-    $$    \texttt{x = x1*5+2;} \quad   \texttt{z = z1*sqrt(0.004);} \quad   \texttt{xy1 = [x exp(1+x*0.6+z)];} $$     
-    $$     \texttt{x = x1*4*pi;} \quad  \texttt{z = z1*sqrt(0.05);} \quad  \texttt{xy2 = [x 2*sin(x+1+z)];} $$
-    $$    \texttt{x = x1*5;} \quad   \texttt{z = z1;} \quad   \texttt{xy3 =} [\texttt{x} -0.6*\texttt{x}.^3+0.9*\texttt{x}.^2+3*\texttt{x}+4.5+\texttt{z}]; $$
-    $$     \texttt{x = x1*5;} \quad   \texttt{z = z1*sqrt(0.004);} \quad \texttt{xy4 =} [\texttt{x} \quad \texttt{exp(0.3+log(x)*0.5+z)}];  $$
-    $$   \texttt{x = x1*2*pi;} \quad  \texttt{z = z1*0.5+6;} \quad   \texttt{xy =} [\texttt{z.*cos(x)+4 z.*sin(x)+2}]; $$
-    $$   \texttt{save} \quad \texttt{dat3\_1} \quad \texttt{xy1 xy2 xy3 xy4}$$
-    $$ \texttt{save} \quad \texttt{dat3\_1} \quad \texttt{xy} $$
+\noindent \textbf{Task:} Now data for four different signal models have to be created. Generate therefore an on [0, 1] uniformly distributed random sequence \texttt{x1} and a standard normal distributed random sequence \texttt{z1,} each with a length of 100 values. Set in both cases first the initial value to 0. Type now these commands in MATLAB in the following order: 
+ $$    \texttt{x = x1*5+2;} \quad   \texttt{z = z1*sqrt(0.004);} \quad   \texttt{xy1 = [x exp(1+x*0.6+z)];} $$     
+ $$     \texttt{x = x1*4*pi;} \quad  \texttt{z = z1*sqrt(0.05);} \quad  \texttt{xy2 = [x 2*sin(x+1+z)];} $$
+ $$    \texttt{x = x1*5;} \quad   \texttt{z = z1;} \quad   \texttt{xy3 =} [\texttt{x} -0.6*\texttt{x}.^3+0.9*\texttt{x}.^2+3*\texttt{x}+4.5+\texttt{z}]; $$
+ $$     \texttt{x = x1*5;} \quad   \texttt{z = z1*sqrt(0.004);} \quad \texttt{xy4 =} [\texttt{x} \quad \texttt{exp(0.3+log(x)*0.5+z)}]; $$
+ $$   \texttt{x = x1*2*pi;} \quad  \texttt{z = z1*0.5+6;} \quad   \texttt{xy =} [\texttt{z.*cos(x)+4 z.*sin(x)+2}]; $$
+ $$   \texttt{save} \quad \texttt{dat3\_1} \quad \texttt{xy1 xy2 xy3 xy4}$$
+ $$ \texttt{save} \quad \texttt{dat3\_1} \quad \texttt{xy} $$
 
 \noindent \textbf{Solution:}
 \noindent At first, a uniformly distributed random sequence, \texttt{x1} and a standard normal distributed random sequence, \texttt{z1} with length as 100 are created. Then, four different signal models are created using the equations mentioned in the task. The four models are: exponential model, sine model, polynomial model and power model. These models are finally saved in \texttt{dat3\_1}.

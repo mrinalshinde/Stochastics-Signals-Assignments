@@ -137,7 +137,7 @@ $$q(\hat{\underline{a}}) = \underline{y}^T(\underline{\underline{I}} -\underline
 $$q(\hat{\underline{a}}) = \underline{y}^T(\underline{\underline{I}}-\underline{\underline{P}})\underline{y}$$
 \noindent Therefore,
 $$q(\hat{\underline{a}}) = \underline{y}^T\underline{\underline{P}}^\bot \underline{y}$$
-
+\newpage
 \noindent \textbf{Estimate for variance of noise:}\\
 \noindent SInce $Z_i \sim N(o, {\sigma_Z}^2),$ estimate of variance, ${\sigma_Z}^2$ is,
 $$ {\sigma_Z}^2 = \frac{1}{N-1} \sum_{i=1}^{N}(Z_i - \mu_Z)^2  $$
@@ -348,7 +348,7 @@ $$\underline{\underline{p}}^{\bot} = \underline{\underline{I}} - \underline{\und
 $$\hat{\sigma_z^2} = \frac{\underline{y}^T\cdot \underline{\underline{p}}^{\bot}\cdot \underline{y}}{(N-2)}$$
 
 %%%%%%%% section 4 %%%%%%%%%
-\section{Nonlinear LS-Approach to a circlel }
+\section{Nonlinear LS-Approach to a circle }
 \noindent \textbf{Task:} The number of data points ($x_i,y_i$): $i = 1,2,...,N$ are given in the $xy$-plane. Fit to them a circle with unknown radius r and unknown centre ($x_0, y_0$). The model for the observation is given by
 $$ \sqrt{(x_i - x_0)^2 + (y_i - y_0)^2} = r_i = r + z_i $$
 \noindent where $r_i$ indicates the distance between the $i$-th measurement point ($x_i, y_i$) and the centre ($x_0, y_0$) and $z_i$ indicates the error of the radius. Express the sum of squares of measurement errors $q(x_0, y_0, r)$ and derive the necessary condition for their minimization. Is the resulting equation system solvable in an analytic way? Give reasons for your answer. Point out a method for solving the equation system numerically.
@@ -368,3 +368,103 @@ $$\frac{\partial q}{\partial y_0} = \sum_{i=0}^N2(r-\sqrt{(x_i-x_0)^2+(y_i-y_0)^
 \noindent The equations cannot be solved analytically since the parameters cannot be obtained in an explicit form. So, the way to solve is to develop this function using Taylor series. We can obtain a linear model by neglecting the higher order terms in this series.
 
 %%%%%%%%%% section 5 %%%%%%%
+\section{Linear LS-Approach to a circle}
+\noindent \textbf{Task:} Supposed the circle ($\overset{\sim}{X_0}, \overset{\sim}{Y_0} $) of the circle from section 1.4 is approximately known. Then it is possible to develop the function $r_i$ ($X_0,Y_0$) into a Taylor series in place  ($\overset{\sim}{X_0}, \overset{\sim}{Y_0} $). The approximation
+\begin{equation*} 
+\begin{split}
+ r_i\;(x_0,y_0) &= \sqrt{(x_i - x_0)^2 + (y_i - y_0)^2} \\
+ & \approx r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0}) + \frac{\partial r_i (x_0,y_0)}{\partial x_0}\Bigg|_{ (\overset{\sim}{x_0}, \overset{\sim}{y_0} )} \quad ({x_0} - \overset{\sim}{x_0}) + \frac{\partial r_i (x_0,y_0)}{\partial y_0}\Bigg|_{ (\overset{\sim}{x_0}, \overset{\sim}{y_0} )} \quad ({y_0} - \overset{\sim}{y_0}) \\
+  & \approx r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0}) - \frac{x_i - \overset{\sim}{x}_0}{  r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0})}\;(x_0 - \overset{\sim}{x}_0) - \frac{y_i - \overset{\sim}{y}_0}{ r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0})}\;(y_0 - \overset{\sim}{y}_0) 
+\end{split}
+\end{equation*}
+\noindent provides a new model for the error
+$$ z_i = r_i - r =r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0}) - \frac{x_i - \overset{\sim}{x}_0}{  r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0})}\;(x_0 - \overset{\sim}{x}_0) - \frac{y_i - \overset{\sim}{y}_0}{ r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0})}\;(y_0 - \overset{\sim}{y}_0) - r $$
+\noindent Formulate the minimization criterion for the linearized model. Determine the LS-Estimates ($\hat{x}_0, \hat{y}_0$) and $\hat{r}$ from ($x_i,y_i$) : $i = 1,2,...N.$ The LS-Estimates obtained are only as good as the initial guess of the centre $(\overset{\sim}{X_0}, \overset{\sim}{Y_0}).$ One can improve the estimates if the procedure mentioned above is repeated after replacing $(\overset{\sim}{X_0}, \overset{\sim}{Y_0})$ by  ($\hat{x}_0, \hat{y}_0$). Furthermore, state two different stopping criteria
+for this iterative procedure.
+
+\newpage
+
+\noindent \textbf{Solution:}\\
+\noindent We know the center of the circle. Hence, we make an approximation using Taylor series.
+\begin{equation*} 
+\begin{split}
+ r_i\;(x_0,y_0) &= \sqrt{(x_i - x_0)^2 + (y_i - y_0)^2} \\
+ & \approx r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0}) + \frac{\partial r_i (x_0,y_0)}{\partial x_0}\Bigg|_{ (\overset{\sim}{x_0}, \overset{\sim}{y_0} )} \quad ({x_0} - \overset{\sim}{x_0}) + \frac{\partial r_i (x_0,y_0)}{\partial y_0}\Bigg|_{ (\overset{\sim}{x_0}, \overset{\sim}{y_0} )} \quad ({y_0} - \overset{\sim}{y_0}) \\
+  & \approx r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0}) - \frac{x_i - \overset{\sim}{x}_0}{  r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0})}\;(x_0 - \overset{\sim}{x}_0) - \frac{y_i - \overset{\sim}{y}_0}{ r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0})}\;(y_0 - \overset{\sim}{y}_0) 
+\end{split}
+\end{equation*}
+\noindent The error can be expressed as,
+$$ z_i = r_i - r =r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0}) - \frac{x_i - \overset{\sim}{x}_0}{  r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0})}\;(x_0 - \overset{\sim}{x}_0) - \frac{y_i - \overset{\sim}{y}_0}{ r_i\;(\overset{\sim}{x_0}, \overset{\sim}{y_0})}\;(y_0 - \overset{\sim}{y}_0) - r $$
+$$ z_i = r_i(\overset{\sim}{x_0},\overset{\sim}{y_0})+\frac{x_i-\overset{\sim}{x_0}}{r_i(\overset{\sim}{x_0},\overset{\sim}{y_0})}\overset{\sim}{x_0}+\frac{y_i-\overset{\sim}{y_0}}{r_i(\overset{\sim}{x_0},\overset{\sim}{y_0})}\overset{\sim}{y_0}-\frac{x_i-\overset{\sim}{x_0}}{r_i(\overset{\sim}{x_0},\overset{\sim}{y_0})}x_0-\frac{y_i-\overset{\sim}{y_0}}{r_i(\overset{\sim}{x_0},\overset{\sim}{y_0})}y_0-r$$
+\noindent Therefore we can write,
+$$z_i=a_i - b_ix_0 - c_iy_0 -r$$
+\noindent We can represent the above equation in the form of matrix notation as follows,
+\[
+\begin{bmatrix}
+z_1\\
+z_2\\
+.\\
+.\\
+.\\
+z_N\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+a_1\\
+a_2\\
+.\\
+.\\
+.\\
+a_N\\
+\end{bmatrix}
+-
+\begin{bmatrix}
+b_1 & c_1 & 1\\
+b_2 & c_2 & 1\\
+. & . & .\\
+. & . & .\\
+. & . & .\\
+b_N & c_N & 1\\
+\end{bmatrix}
+\begin{bmatrix}
+x_0\\
+y_0\\
+r\\
+\end{bmatrix}
+\]
+\noindent We can determine the least square estimates,
+$$\hat{\underline{a}}=
+\begin{bmatrix}
+\hat{x}_0\\
+\hat{y}_0\\
+\hat{r}\\
+\end{bmatrix}
+=
+(\underline{\underline{H}}^T.\underline{\underline{H}})^{-1}\underline{\underline{H}}^T\underline{y}$$
+\noindent We take the mean value as the center points for the data. The estimate of data will be good if the initial guess is good.
+$$\overset{\sim}{x_0} = \text{mean}(\overset{\sim}{x_0}) $$
+$$\overset{\sim}{y_0} = \text{mean}(\overset{\sim}{y_0}) $$
+\noindent This updated version of initial values will be used to estimate and will be replaced by least square estimates. If we repeat the procedure till the time a better approximation is obtained, we reach the required amount of accuracy.
+
+\noindent Stopping criteria for this procedure is when no more significant change is observed between two consecutive results. We then stop the iteration process. i.e,
+$$ \left|
+\begin{pmatrix}
+x_{0,j}\\
+y_{0,j}\\
+r_j
+\end{pmatrix} -
+\begin{pmatrix}
+x_{0,j+1}\\
+y_{0,j+1}\\
+r_{j+1}
+\end{pmatrix}
+\right| < \varepsilon$$
+\noindent If the estimates are less than the significant value, when no change is significantly achieved , iteration stops.
+$$\text{max}\left(\left| x_{0,j} - x_{0,j+1} \right|, \left| y_{0,j} - y_{0,j+1} \right|, \left| r_{j} - r_{j+1} \right| \right) < \varepsilon$$
+\noindent and,
+$$\left| q(x_{0,j}, y_{0,j}, r_j) - q(x_{0,j+1}, y_{0,j+1}, r_{j+1}) \right| < \varepsilon$$
+\noindent The iteration stops when the error is not significantly decreasing. A combination between the two conditions can be set as stopping condition.
+
+
+
+
