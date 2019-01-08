@@ -347,5 +347,24 @@ $$\underline{\underline{p}}^{\bot} = \underline{\underline{I}} - \underline{\und
 \noindent Therefore,
 $$\hat{\sigma_z^2} = \frac{\underline{y}^T\cdot \underline{\underline{p}}^{\bot}\cdot \underline{y}}{(N-2)}$$
 
+%%%%%%%% section 4 %%%%%%%%%
+\section{Nonlinear LS-Approach to a circlel }
+\noindent \textbf{Task:} The number of data points ($x_i,y_i$): $i = 1,2,...,N$ are given in the $xy$-plane. Fit to them a circle with unknown radius r and unknown centre ($x_0, y_0$). The model for the observation is given by
+$$ \sqrt{(x_i - x_0)^2 + (y_i - y_0)^2} = r_i = r + z_i $$
+\noindent where $r_i$ indicates the distance between the $i$-th measurement point ($x_i, y_i$) and the centre ($x_0, y_0$) and $z_i$ indicates the error of the radius. Express the sum of squares of measurement errors $q(x_0, y_0, r)$ and derive the necessary condition for their minimization. Is the resulting equation system solvable in an analytic way? Give reasons for your answer. Point out a method for solving the equation system numerically.
+\\
+\noindent \textbf{Solution:}\\
+\noindent The radius of the circle is $r$ and its center is $(x_0,y_0)$. The Model for the observation is,
+$$ \sqrt{(x_i - x_0)^2 + (y_i - y_0)^2} = r_i = r + z_i $$
+\noindent Here $r_i$ is the distance of the point $(x_i,y_i)$ from the center and $z_i$ is the error of the radius. Sum of the squares of the measurement errors is equal to,
+$$q(r,x_0,y_0) = \sum_{i=1}^Nz_i^2 = \sum_{i=1}^N(r-r_i)^2$$
+$$q(r,x_0,y_0) = \sum_{i=1}^N(r-\sqrt{(x_i-x_0)^2+(y_i-y_0)^2})^2$$
+\noindent As this has to be minimized, the partial derivative of this term is taken with respect to $x_0,y_0$ and r equated to 0, i.e.,
+$$\frac{\partial q(r,x_0,y_0)}{\partial r} 0  \quad \frac{\partial q(r,x_0,y_0)}{\partial x_0} = 0 \quad \frac{\partial q(r,x_0,y_0)}{\partial y_0} = 0$$
+\noindent This gives us the following three equations,
+$$\frac{\partial q}{\partial r} = \sum_{i=0}^N2(r-\sqrt{(x_i-x_0)^2+(y_i-y_0)^2})=0$$
+$$\frac{\partial q}{\partial x_0} = \sum_{i=0}^N2(r-\sqrt{(x_i-x_0)^2+(y_i-y_0)^2})\frac{-(x_i-x_0)}{\sqrt{(x_i-x_0)^2+(y_i-y_0)^2}}=0$$
+$$\frac{\partial q}{\partial y_0} = \sum_{i=0}^N2(r-\sqrt{(x_i-x_0)^2+(y_i-y_0)^2})\frac{-(y_i-y_0)}{\sqrt{(x_i-x_0)^2+(y_i-y_0)^2}}=0$$
+\noindent The equations cannot be solved analytically since the parameters cannot be obtained in an explicit form. So, the way to solve is to develop this function using Taylor series. We can obtain a linear model by neglecting the higher order terms in this series.
 
-
+%%%%%%%%%% section 5 %%%%%%%
