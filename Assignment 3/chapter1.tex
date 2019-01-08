@@ -273,3 +273,79 @@ $$\hat{\sigma_z^2} =\frac{\overset{\sim}{\underline{y}^T} \cdot \underline{\unde
 where,
 $$\underline{\underline{p}}^{\bot} = I -  \overset{\sim}{\underline{\underline{H}}} (\overset{\sim}{\underline{\underline{H}}^T}   \cdot \overset{\sim}{\underline{\underline{H}}})^{-1}  \cdot  \overset{\sim}{\underline{\underline{H}}^T} $$
 \noindent The number of observations should also be at least 2 in order to determine the parameter. Thus we have an accurate realization.\\
+
+%%%%%%%%*****section 3 *******%%%%%%%%%%
+
+\section{Sine model }
+\noindent \textbf{Task:} The amplitude $a$ and phase $b$ of the sine model
+$$ Y_i = a \; \text{sin}(x_i + b) + Z_i  $$
+\noindent are unknown. Linearize the sine model. Estimate the parameters $a$ and $b$ as well as the variance of the measurement error after linearization. How large has to be the number $N$ of observations at least?\\
+\noindent \textbf{Solution:}\\
+\noindent In this we assume that the frequency of the given sinusoidal signal is known and we need to determine the amplitude and phase of the sine signal, where signal is affected by noise. The sine model is given as,
+$$ Y_i = a \; \text{sin}(x_i + b) + Z_i  $$
+\noindent Now we define, 
+$$q(a,b) = \sum_{i=1}^{N}(y_i - a\;\text{sin}(x_i + b))^2$$
+\noindent In-order to linearize the given model we use, 
+$$\text{sin}(x+y) = \text{sin}\;x\; \text{cos}\;y + \text{sin}\;y\; \text{cos}\; x$$
+\noindent Therefore,
+$$y_i = a\;\text{sin}\;x_i\;\text{cos}\;b + a\;\text{cos}\;x_i\;\text{sin}\;b + z_i$$
+$$y_i = a\;\text{cos}\;b\;\text{sin}\;x_i + a\;\text{sin}\;b\;\text{cos}\;x_i +z_i$$
+Let $a\;\text{cos}\;b = A$ and $a\;\text{sin}\;b = B$. Then for $ i=1,.....,N,$ the matrix notation is given by,
+\[
+\begin{bmatrix}
+{y_1}\\
+{y_2}\\
+.\\
+.\\
+.\\
+{y_N}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\text{sin}\;x_1& \text{cos}\;x_1\\
+\text{sin}\;x_2& \text{cos}\;x_2\\
+. & .\\
+. & .\\
+. & .\\
+\text{sin}\;x_N& \text{cos}\;x_N\\
+\end{bmatrix}
+\begin{bmatrix}
+A\\
+B\\
+\end{bmatrix}
+=\begin{bmatrix}
+{z_1}\\
+.\\
+.\\
+.\\
+.\\
+{z_N}
+\end{bmatrix}
+\]
+\noindent The matrix can be written as $\underline{\overset{\sim}{y}} = \underline{\underline{H}} \cdot \underline{\overset{\sim}{a}} + \underline{\overset{\sim}{Z}}$. For the sine model, the measurement will be,
+$$ q(A,B) = (\overset{\sim}{y} - \underline{\underline{\overset{\sim}{H}}}\; \underline{\overset{\sim}{a}})^T \cdot (\overset{\sim}{y} - \underline{\underline{\overset{\sim}{H}}}\; \underline{\overset{\sim}{a}})$$
+\noindent The criteria to get the coefficients $A$ and $B$ is,
+\[
+{\underline{\hat{a}}} =
+\begin{bmatrix}
+\hat{A} \\
+\hat{B} \\
+\end{bmatrix}
+=
+(  \overset{\sim}{\underline{\underline{H}}^T}   \cdot \overset{\sim}{\underline{\underline{H}}})^{-1} \cdot  \overset{\sim}{\underline{\underline{H}}^T} \cdot \underline{\overset{\sim}{y}}
+\]
+\noindent Hence solving the equation we have,
+$$ \hat{A} = \hat{a}\;\text{cos}\;\hat{b}\\$$
+$$ \hat{B} = \hat{a}\;\text{sin}\;\hat{b}\\$$
+\noindent Therefore we get the parameters as,
+$$\hat{b} = \text{arc}\;\text{tan}\frac{\hat{B}}{\hat{A}}$$
+$$\hat{a} = \frac{\hat{A}}{\text{cos}(\text{arc}\;\text{tan}\frac{\hat{B}}{\hat{A}})}$$
+\noindent Also the ampliture ${\hat{A}}^2 + {\hat{B}}^2 = {\hat{a}}^2$. Now to get the variance with number of observations as (p+1),
+$$\hat{\sigma_z^2} = \frac{\underline{y}^T\cdot \underline{\underline{p}}^{\bot}\cdot \underline{y}}{(N- (p+1))}$$
+\noindent Here also we have 2 equations. Hence, the number of observations will be 2. Also from section 1.1,
+$$\underline{\underline{p}}^{\bot} = \underline{\underline{I}} - \underline{\underline{H}}(\underline{\underline{H}}^T.\underline{\underline{H}})^{-1}\underline{\underline{H}}^T$$
+\noindent Therefore,
+$$\hat{\sigma_z^2} = \frac{\underline{y}^T\cdot \underline{\underline{p}}^{\bot}\cdot \underline{y}}{(N-2)}$$
+
+
+
