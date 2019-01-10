@@ -132,7 +132,7 @@
 \endminipage
 \end{figure}
 
-\noindent \textbf{Inference:} The variance reduces from 43.87 at $p = 1$ to 0.767 at $p = 3.$ Hence the polynomial of order 3 is considered to be the correct order. This is because, as the order increases further than 3, it remains almost constant.
+\noindent \textbf{Inference:} The variance reduces from 43.87 at $p = 1$ to 0.767 at $p = 3.$ Hence the polynomial of order 3 is considered to be the correct order. This is because, as the order increases further than 3, it remains almost constant. The parameters for the polynomial of order 3 are:  a = 4.77091, b = 2.47796, c = 1.187414 and d = -0.64021.
 %%%%%%%%%%%  code 5  %%%%%
 
 \section{Comparison of observations and estimated model}  \label{Comparison of observations and estimated model}
@@ -147,15 +147,15 @@
  \noindent The output of the code is shown below. The estimated value is shown by a line while the observed value is represented by dots.
 \begin{figure}[H]
     \centering
-   \subfloat[Exponential model]{ {\includegraphics[width=8.3cm]{ass5_1.png}} }
+   \subfloat[Exponential model]{ {\includegraphics[width=7.6cm]{ass5_1.png}} }
     \qquad
-    \subfloat[Sine model]{ {\includegraphics[width=8.3cm]{ass5_2.png} }}
+    \subfloat[Sine model]{ {\includegraphics[width=7.6cm]{ass5_2.png} }}
 \end{figure}
 \begin{figure}[H]
     \centering
-   \subfloat[Polynomial model]{ {\includegraphics[width=8.3cm]{ass5_3.png}} }
+   \subfloat[Polynomial model]{ {\includegraphics[width=7.6cm]{ass5_3.png}} }
     \qquad
-    \subfloat[Power model]{ {\includegraphics[width=8.3cm]{ass5_4.png} }}
+    \subfloat[Power model]{ {\includegraphics[width=7.6cm]{ass5_4.png} }}
     \caption{Comparison of observations and estimated models}
 \end{figure}
 
@@ -214,9 +214,9 @@
 %%%%%% code 8 %%%%%%
 
 \section{ LLS-Fit to a circle: convergence}  \label{ LS-Fit to a circle: convergence }
-\noindent \textbf{Task:} Does this method converge, if the initial guess of the circle center is very poor? Try it by giving your function \texttt{LSE\_circle} intentionally a very poor initial estimate of the centre location. Explain your observation.
+\noindent \textbf{Task:} Does this method converge, if the initial guess of the circle center is very poor? Try it by giving your function \texttt{LSE\_circle} intentionally a very poor initial estimate of the centre location. Explain your observation.\\
 
-\noindent \textbf{Solution:} The function \texttt{LSE\_circle} mentioned earlier is used again in this program. In this method, we require an initial guess of the centre of the circle. If this guess is poor, the method does not converge and no result can be obtained.
+\noindent \textbf{Solution:} The function \texttt{LSE\_circle} mentioned earlier is used again in this program. In this method, we require an initial guess of the centre of the circle. If this guess is poor, the method does not converge and no result can be obtained.\\
 \noindent \textbf{MATLAB code:} 
 \lstinputlisting{assignment3_8.m}
 
@@ -224,8 +224,8 @@
 \begin{figure}[H]
 \centering
 {\includegraphics[scale=0.15]{ass8_1.png}}
-\caption{LS - adjustment to a circle: estimating the centre }
-\label{LS - adjustment to a circle: estimating the centre }
+\caption{LS-Fit to a circle: convergence }
+\label{LS-Fit to a circle: convergence }
 \end{figure}
 
 \noindent \textbf{Inference:} Majority of the blue dots lie inside the circle leading to convergence. Few blue dots lie outside the circle which can also allow convergence. If the initial guess is placed where there is a red dot, the system will not converge and hence no result will be obtained.
