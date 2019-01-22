@@ -1,0 +1,16 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Covariances found using functions \texttt {covfct}(Sample) and \texttt {xcov}(Biased)\relax }}{7}{figure.caption.5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sample Covariance}}}{7}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Biased Covariance}}}{7}{subfigure.1.2}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Covariances found using functions \texttt {covfct}(Modified Sample) and \texttt {xcov}(Unbiased)\relax }}{8}{figure.caption.6}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Modified Sample Covariance}}}{8}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Unbiased Covariance}}}{8}{subfigure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Comparison of the covariances\relax }}{8}{figure.caption.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Uniform distribution}}}{8}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Standard normal distribution}}}{8}{subfigure.3.2}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Impulse response of the filter \relax }}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Variance as a function of the polynomial order\relax }}{14}{figure.caption.10}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces LS-adjustment to a circle: estimating the centre \relax }}{16}{figure.caption.11}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces LS-adjustment to a circle: estimating the centre \relax }}{19}{figure.caption.12}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces LS-adjustment to a circle: estimating the centre \relax }}{19}{figure.caption.13}

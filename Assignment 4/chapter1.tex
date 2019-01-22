@@ -1,0 +1,58 @@
+%DO NOT MESS AROUND WITH THE CODE ON THIS PAGE UNLESS YOU %REALLY KNOW WHAT YOU ARE DOING
+ \chapter{Preparation}
+
+\section{Discrete white noise }
+\noindent \textbf{Task:} Specify the constant component, the covariance function and the spectral density of discrete white noise.\\
+\noindent \textbf{Solution:}\\
+
+
+
+
+%**************section 2********
+\section{Generation of AR(\textit{p})-processes}
+\noindent \textbf{Task:} Make oneself familiar with the MATLAB-function \texttt{filter.} The function \texttt{filter} is used for the generation of an AR($p$)-process. Which values have to be entered for the filter coefficient vector \textbf{b}? Which value has to be assigned to the first element $a_0$ of the filter coefficient vector \textbf{a}?\\
+\noindent \textbf{Solution:}\\
+
+
+
+
+%**************section 3********
+\section{LS-Estimation}
+\noindent \textbf{Task:} How can one determine the least squares estimates of the parameters $a_1 , a_2 ,..., a_p ;{\sigma_z}^2$ for the given observations $x_i ( i = 1,2,...,N )$? How large has to be the number of observations $N$? How large must be $N$, if the estimates shall be determined by solving the empirical Yule-Walker-Equations?
+\\
+\noindent \textbf{Solution:}\\
+
+
+
+
+%**************section 4********
+\section{LS-Estimation}
+\noindent \textbf{Task:} Which particular property of the coefficient matrix of the following Yule-Walker-Equation system
+\begin{equation*}
+\begin{pmatrix}
+c_{xx}(0) & c_{xx}(1) & ... & c_{xx}(p-1)\\
+c_{xx}(1) & c_{xx}(0) & ... & c_{xx}(p-2)\\
+. & . &.  &. \\
+. & . &\;\;.  &. \\
+. & . &\; \; \; \; .  &. \\
+c_{xx}(p-1) & c_{xx}(p-2) & ... & c_{xx}(0)\\
+\end{pmatrix}
+\begin{pmatrix}
+a_1\\
+a_2\\
+. \\
+. \\
+. \\
+a_p \\
+\end{pmatrix} = -
+\begin{pmatrix}
+c_{xx}(1)\\
+c_{xx}(2)\\
+. \\
+. \\
+. \\
+c_{xx}(p)\\
+\end{pmatrix}
+\end{equation*}
+permits the application of the Levinson-Durbin-Algorithm? Is the Levinson-Durbin-Algorithm be suited for solving the equation system of the LS-Estimation procedure? Give reasons for your answer. Which advantage offers the Levinson-Durbin-Algorithm with respect to the model order estimation? How can the model order be estimated? \\
+\noindent \textbf{Solution:}\\
