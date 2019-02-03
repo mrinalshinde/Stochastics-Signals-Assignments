@@ -4,14 +4,36 @@
 \section{Discrete white noise }
 \noindent \textbf{Task:} Specify the constant component, the covariance function and the spectral density of discrete white noise.\\
 \noindent \textbf{Solution:}\\
-
-
-
+\noindent A discrete white noise is a discrete signal whose samples are regarded as a sequence of serially uncorrelated random variables with zero mean and finite variance. Mean, $E(Z_t) = \mu = 0.$\\
+The covariance function is:
+$$ \text{cov}(Z_{t+\tau},Z(t)) = \sigma_Z^2 \partial(\tau)$$
+The spectral density is given by:
+$$C_{ZZ}(\Omega) = \sum_{\tau=-\infty}^{\infty} C_{zz}(\tau)e^{-j\Omega t} = \sigma_Z^2$$
+The spectral density has a constant value at all frequencies.
 
 %**************section 2********
 \section{Generation of AR(\textit{p})-processes}
 \noindent \textbf{Task:} Make oneself familiar with the MATLAB-function \texttt{filter.} The function \texttt{filter} is used for the generation of an AR($p$)-process. Which values have to be entered for the filter coefficient vector \textbf{b}? Which value has to be assigned to the first element $a_0$ of the filter coefficient vector \textbf{a}?\\
 \noindent \textbf{Solution:}\\
+\noindent The function \texttt{filter} can be used to generate an AR($p$)-process in MATLAB. $Y = \texttt{filter}(b,a,X)$ filters the data in vector $X$ with the filter described by vectors $a$ and $b$ in-order to create the filtered data, $Y$. It can be mathematically expressed into an equation as,
+$$ a_0Y_t+a_1Y_{t-1}+...a_pY_{t-p} = b_0X_t+b_1X_{t-1}+...b_qX_{t-q}$$
+\noindent In the case of AR($p$)-process with an input Z and output X , it can be stated that:
+$$ a_0X_t+a_1X_{t-1}+...a_pX_{t-p} = Z_t$$
+\noindent So comparing the formula obtained by the Matlab function \texttt{filter} and the formula expressing an AR($p$)- process, the vectors $a$ and $b$ can be entered as follows:
+\[
+\underline{a^T} = (a_0,a_1,...a_p):
+\begin{cases}
+\text{$a_0$ = 1}\\
+\text{$a_i$}  &\quad\text{i $\neq$ 0}\\
+\end{cases}
+\]
+\[
+\underline{b^T} = (b_0,b_1,...b_p):
+\begin{cases}
+\text{$b_0$ = 1}\\
+\text{$b_i = 0$}  &\quad\text{i $\neq$ 0}\\
+\end{cases}
+\]
 
 
 
@@ -21,12 +43,65 @@
 \noindent \textbf{Task:} How can one determine the least squares estimates of the parameters $a_1 , a_2 ,..., a_p ;{\sigma_z}^2$ for the given observations $x_i ( i = 1,2,...,N )$? How large has to be the number of observations $N$? How large must be $N$, if the estimates shall be determined by solving the empirical Yule-Walker-Equations?
 \\
 \noindent \textbf{Solution:}\\
-
+\noindent For an AR($p$)-process,
+$$ X_{t}+a_1X_{t-1}+...a_pX_{t-p} = Z_t  ;\;\;\;\quad for \;\; t=0,1,....N-1$$
+\noindent For $t = 0,1,...,N-1$
+$$ X_{t+p}+a_1X_{t+p-1}+...a_pX_{t}=Z_{t+p} $$
+$$N-1 = t+p$$
+$$t =  N-p-1$$
+\noindent Therefore, we can write in matrix notation:
+\[
+\underbrace{\begin{pmatrix}
+X_{p}\\
+X_{p+1}\\
+.\\
+.\\
+X_{N-1}\\
+\end{pmatrix}}_\text{\underline{X}}
++
+\underbrace{\begin{pmatrix}
+X_{p-1}.....X_0\\
+X_{p}....X_1\\
+.\\
+.\\
+X_{N-2}....X_{N-p-1}\\
+\end{pmatrix}}_\text{\underline{H}}
++
+\underbrace{\begin{pmatrix}
+a_1\\
+.\\
+.\\
+.\\
+a_p\\
+\end{pmatrix}}_\text{\underline{a}}
+=
+\underbrace{\begin{pmatrix}
+Z_p\\
+Z_{p+1}\\
+.\\
+.\\
+Z_{N-1}\\
+\end{pmatrix}}_\text{\underline{Z}}
+\]
+$$\underline{X}+\underline{\underline{H}}.\underline{a} = \underline{Z}$$
+\noindent So we can estimate the vector $a$ using LS-estimation, and the result is,
+$$\underline{\hat{a}} = -(\underline{\underline{H^T}} \; \underline{\underline{H}} )^{-1}\underline{\underline{H^T}}
+\; \underline{X}$$
+\noindent And the LS error is 
+$$q(\underline{\hat{a}}) = \sum_{i=p}^{N-1}Z_i^2 = \underline{Z^T}\;\underline{Z}=(\underline{X} + \underline{\underline{H}}.\underline{\hat{a}})^T(\underline{X} + \underline{\underline{H}}.\underline{\hat{a}}) = \underline{X^T}(\underline{\underline{I}}-\underline{\underline{P}})\underline{X}$$
+$$\underline{\underline{P}}=\underline{\underline{H}}(\underline{\underline{H^T}}\;\underline{\underline{H}})^{-1}\underline{\underline{H^T}}$$
+$$\sigma_Z^2 = \frac{q(\underline{\hat{a}})}{N-p}=\frac{\underline{X^T}(\underline{\underline{I}}-\underline{\underline{P}})\underline{X}}{N-p}$$
+$$\hat{C}_{xx}(\Omega) = \frac{\sigma_Z^2}{|1+\underline{a}_1e^{j\Omega}+...+\underline{a}_pe^{jp\Omega}|^2}$$
+\noindent In order to get the LS-estimate the number of observations should satisfy,
+$$\underbrace{N-p}_\text{number of equations} \geq \underbrace{p}_\text{number of coefficients} \Rightarrow N \geq 2p$$ 
+Below expressed equation is the set of Yule- Walker equations \\
+$$C_{xx}(m) + \sum_{n=1}^pa_nC_{xx}(m-n) = \sigma_z^2 \partial_m  \;\;\;\;,m =0,......p$$
+\noindent So to determine the estimates of the parameters the number of observations has to be  N $\geq$ p+1.
 
 
 
 %**************section 4********
-\section{LS-Estimation}
+\section{Levinson-Durbin-Algorithm}
 \noindent \textbf{Task:} Which particular property of the coefficient matrix of the following Yule-Walker-Equation system
 \begin{equation*}
 \begin{pmatrix}
@@ -56,3 +131,44 @@ c_{xx}(p)\\
 \end{equation*}
 permits the application of the Levinson-Durbin-Algorithm? Is the Levinson-Durbin-Algorithm be suited for solving the equation system of the LS-Estimation procedure? Give reasons for your answer. Which advantage offers the Levinson-Durbin-Algorithm with respect to the model order estimation? How can the model order be estimated? \\
 \noindent \textbf{Solution:}\\
+\noindent It was concluded that,
+$$ -(\underline{\underline{H^T}}\;\underline{\underline{H}})\underline{\hat{a}} = \underline{\underline{H^T}}\;\underline{X}      $$
+\noindent Levinson-Durbin-Algorithm can be applied if the matrix (HT H) is Toeplitz, i.e. the diagonal elements of the matrix are equal.
+\noindent The Y-W equation system:
+\begin{equation*}
+\begin{pmatrix}
+c_{xx}(0) & c_{xx}(1) & ... & c_{xx}(p-1)\\
+c_{xx}(1) & c_{xx}(0) & ... & c_{xx}(p-2)\\
+. & . &.  &. \\
+. & . &\;\;.  &. \\
+. & . &\; \; \; \; .  &. \\
+c_{xx}(p-1) & c_{xx}(p-2) & ... & c_{xx}(0)\\
+\end{pmatrix}
+\begin{pmatrix}
+a_1\\
+a_2\\
+. \\
+. \\
+. \\
+a_p \\
+\end{pmatrix} = -
+\begin{pmatrix}
+c_{xx}(1)\\
+c_{xx}(2)\\
+. \\
+. \\
+. \\
+c_{xx}(p)\\
+\end{pmatrix}
+\end{equation*}
+\noindent Due to the structure of the matrix (diagonal elements are equal), Levinson-Durbin-Algorithm can be suited to solve this equation system. The advantage of using Levinson-Durbin-Algorithm, when the model order is to be estimated, is that has to be computed for different orders. First the computing for order 2, and then to do the computation for order 3 there is no need to start from the beginning. Hence the computation load is lower.
+
+\noindent Estimation of model order:
+\noindent As mentioned earlier, $\hat{{\sigma_Z}}^2$ is computed for different orders. It is supposed to decrease rapidly at the beginning and then the slope becomes slight. To estimate the model order one of two criteria is applied:
+\begin{enumerate}
+ \item Akaike criteria, AIC $(p) = \text{ln} \hat{{\sigma_{Z,p}}}^2 + p \frac{2}{N}$
+ \item Rissanen criteria, MDL $(p) = \text{ln} \hat{{\sigma_{Z,p}}}^2 + p \frac{\text{ln}N}{N}$
+  \end{enumerate}
+\noindent 
+And the correct order is the order which satisfies the minimum of the criteria.
+

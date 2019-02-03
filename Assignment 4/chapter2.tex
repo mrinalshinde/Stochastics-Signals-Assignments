@@ -104,71 +104,67 @@ covariance function. The sample covariance function is more accurate in case of 
 %%%%%%%% code 4 %%%%%
 
 
-\section{ Estimating the order of a polynomial } \label{ Estimating the order of a polynomial}
-\noindent \textbf{Task:} Estimate the order $p$ of the polynomial model. Therefore you have to depict the estimated variance versus the model order $p = 1,2,...,10.$ Consider the order that provides the smallest variance as the correct order. Estimate for that order the parameters $a_i$ for $i = 1,2,...,p.$
+\section{ Empiric Yule-Walker-Equation  } \label{ Empiric Yule-Walker-Equation l}
+\noindent \textbf{Task:}Determine the first 11 values of the sample covariance function, e.g.  $\hat{c}_{xx}(0),...\hat{c}_{xx}(10)$ using function \texttt{covfct}. Estimate the parameters $a_1(i=1,2,...,5)$ and ${\sigma_z}^2$ by solving the empirical Yule-Walker-Equation via the Gaussian elimination algorithm. (Note: Use the MATLAB-function \texttt{toeplitz} to generate the coefficient matrix and read the MATLAB-help for the operator \texttt{backslash}.)
 
-\noindent \textbf{Solution:} The same function \texttt{LSE} is used to obtain the variance of the polynomial model. The polynomial order $p$, is taken from 1 to 10 and the parameters at each order are shown in the output. 
+\noindent \textbf{Solution:} The MATLAB-function \texttt{toeplitz} is used to generate the coefficient matrix. The estimation of the first 11 values of the sample covariance function is carried out by the following code.
 
 \noindent \textbf{MATLAB code:}
 \lstinputlisting{assignment4_4.m}
-\noindent \textbf{Output:} The written code plots variance versus polynomial order. It can be seen that the  variance decreases drastically and after a point it remains constant. The plot can be seen in Figure 2.3.
+\noindent \textbf{Output:} Applying \texttt{covfct} function to the AR($p$)-process, the sample covariance function is obtained and the first 11 values are listed in Fig 2.5. The coefficient matrix, estimated parameters as well as the variance is the output of the MATLAB code. 
 \begin{figure}[H]
 \centering
-{\includegraphics[scale=0.16]{ass4_1.png}}
-\caption{Variance as a function of the polynomial order}
-\label{Variance as a function of the polynomial order}
+{\includegraphics[scale=0.66]{ass4_1.png}}
 \end{figure}
-\newpage
-\noindent The output of the execution is shown below. The parameters for polynomial order 1 to 10 are printed and shown.
 
-\noindent \textbf{Inference:} The variance reduces from 43.87 at $p = 1$ to 0.767 at $p = 3.$ Hence the polynomial of order 3 is considered to be the correct order. This is because, as the order increases further than 3, it remains almost constant. The parameters for the polynomial of order 3 are:  a = 4.77091, b = 2.47796, c = 1.187414 and d = -0.64021.
+\noindent \textbf{Inference:} The parameters and the variance is calculated and shown above.
+
 %%%%%%%%%%%  code 5  %%%%%
 
-\section{Comparison of observations and estimated model}  \label{Comparison of observations and estimated model}
-\noindent \textbf{Task:} For each of the models estimated above show the observations of the model ($x_i, y_i$) : $i = 1,2,...,N$ and the corresponding reconstructed model curve ($x_i, g(x_i)$) : $i = 1,2,...,N$ in one figure.
+\section{Levinson-Durbin-Algorithm}  \label{Levinson-Durbin-Algorithm }
+\noindent \textbf{Task:} Write a function \texttt{levindur} for implementation of the Levinson-Durbin-Algorithm. Estimate with this function and the sample covariance function \texttt{covfct} the parameters $a_1(i=1,2,...,5)$ and the variance ${\sigma_z}^2$.
  
- \noindent \textbf{Solution:} We created a function \texttt{compare} inside the function \texttt{plotGraph} which used the values of the parameters from the previous exercise i.e., when $p = 3$ for polynomial model and $p = 1$ for the rest of the models to compare with the observed values from the data set which was previously created.\\
+ \noindent \textbf{Solution:} A function \texttt{levindur} is written using the Matlab function Levinson for the implementation of the Levinson-Durbin-Algorithm.
  
  \noindent \textbf{MATLAB code:}
 \lstinputlisting{assignment4_5.m}
 
  \noindent \textbf{Output:}
- \noindent The output of the code is shown below. The estimated value is shown by a line while the observed value is represented by dots.
+ \noindent Again the parameters $a_i(i=1,2,...,5)$ and ${\sigma_Z}^2$ are estimated and the results are given as follows.
 \begin{figure}[H]
 \centering
-{\includegraphics[scale=0.15]{ass5_1.png}}
-\caption{LS-adjustment to a circle: estimating the centre }
-\label{LS-adjustment to a circle: estimating the centre }
+{\includegraphics[scale=0.65]{ass5_1.png}}
 \end{figure}
 
-
-\noindent \textbf{Inference:} We can infer that the observed value almost coincides with the estimated value. 
-
+\noindent \textbf{Inference:} We can infer that the the values are similar as obtained by solving empirical-Walker-Equation.
 %%%%%% code 6 %%%%%%
 
-\section{ LS-adjustment to a circle: estimating the centre  }  \label{ LS-adjustment to a circle: estimating the centre }
-\noindent \textbf{Task:} Load \texttt{dat3\_2} containing a 100 $\times$ 2 matrix that represent the coordinates of 100 measurement points in the \textit{xy}-plane. Take a look at the measurement points and give from this the coordinates of the centre location. 
+\section{ Estimation of the model order  }  \label{ Estimation of the model order }
+\noindent \textbf{Task:} Estimate the parameters $a_1(i=1,2,...,5)$ and ${\sigma_z}^2$ as in section 4.2.5, but now for the wrong model order $p = 4$ and $p = 6.$ Compare the estimated parameters with those obtained in section 4.2.5. Which consequences have an underestimation or an overestimation of the model order? Estimate
+now for the model order $k(k=1,2,...,10)$ and the variance ${\sigma_{Z,k}}^2$ with the Levinson-Durbin-Algorithm.
+Present the result in a diagram. Draw also the values of the Akaike and Rissanen criterion and deduce from them the model order $p$ of the AR($p$)-process. 
 
 
-\noindent \textbf{Solution:} \texttt{dat3\_2} was loaded as mentioned in the task. It contains the matrix of data set $xy.$ We estimate and find the centre of the circle to be located at (4,2).\\ 
 
+\noindent \textbf{Solution:} The parameters $a_i(i = 1, 2,...,5)$ and ${\sigma_Z}^2$ are estimated for two model orders p=4 and p=6 using the code given below.
 \noindent \textbf{MATLAB code:}
 \lstinputlisting{assignment4_6.m}
 
 \begin{figure}[H]
 \centering
 {\includegraphics[scale=0.15]{ass6_1.png}}
-\caption{LS-adjustment to a circle: estimating the centre }
-\label{LS-adjustment to a circle: estimating the centre }
+\caption{Estimation of model order }
+\label{Estimation of model order}
 \end{figure}
+
+ \noindent \textbf{Output:} 
+ \noindent It is evident that for lower order the variance is higher, hence high error. And for higher order it is less. Comparing the resulting parameters for model orders $p=4$ and $p=6$ with the parameters estimated for the order $p=5$, it can be seen that slight differences between the parameters estimated for the order $p=6$ and $P=5.$ Whereas the differences are big between the parameters estimated for the model with order $p=4$ and $p=5.$ So it is better to have an overestimation of the model order than an underestimation, because underestimation will lead to a big error. In order to determine the correct model order, the variance is estimated for the orders from 1 to 10. 
 
 \begin{figure}[H]
 \centering
-{\includegraphics[scale=0.15]{ass6_2.png}}
-\caption{LS-adjustment to a circle: estimating the centre }
-\label{LS-adjustment to a circle: estimating the centre }
+{\includegraphics[scale=0.55]{ass6_2.png}}
 \end{figure}
+\noindent In information theory, the Akaike and Rissanen criterion is considered for computing the statistical quality of data. Here, the variance is measured along with its order. For $p=5,$ the minimum could be achieved for both the model (so this gives confidence). Rissanen (MDL) has slightly higher value for the slope than Akaike Information criterion, this is due to penalty factor (offset in equation), which is meant to be increase due to logarithmic behavior with increasing order.\\
 
-\noindent \textbf{Inference:} The measurement points nearly takes the shape of a circle with centre at (4,2)
-
+\noindent \textbf{Inference:} It can be seen that the variance in all cases has a minimum at the order $p=5$ which is the model order for the AR($p$)-process.
 
